@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe "Song Forms" do
   let(:artist_name) { "Person with a Face" }
@@ -28,6 +29,7 @@ describe "Song Forms" do
         check "New Age Garbage"
         fill_in "Artist Name", with: artist_name
         click_on "Create"
+        # binding.pry
 
         expect(page).to have_content(song_name)
         expect(page).to have_content(artist_name)
